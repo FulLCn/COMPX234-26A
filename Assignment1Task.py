@@ -75,10 +75,10 @@ class Assignment1:
                 # Grab the request at the head of the queue and print it
                 # Write code here
                 #--task2--#
-                self.outer.full.acquire()
-                with self.outer.queue_lock:
-                    self.printDox(self.printerID)
-                self.outer.empty.release()
+                self.outer.full.acquire()#打印机等待队列里有任务，有任务才能继续,acquire=拿一个任务名额
+                with self.outer.queue_lock:#加锁，保证只有我一个打印机在操作队列
+                    self.printDox(self.printerID)#取出队列最前面的任务，打印它
+                self.outer.empty.release()#释放一个队列空位，告诉机器可以发新任务了。release=空位置加1
 
         def printerSleep(self):
             sleepSeconds = random.randint(1, self.outer.MAX_PRINTER_SLEEP)
