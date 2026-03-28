@@ -19,6 +19,13 @@ class Assignment1:
         self.print_list = printList()  # Create an empty list of print requests 创建打印列表
         self.mThreads = []             # list for machine threads 机器线程列表
         self.pThreads = []             # list for printer threads 打印机线程列表
+        #--task2--#
+        # 互斥锁：保证队列同一时间只能被一个线程操作
+        self.queue_lock = threading.Lock()
+        self.empty=threading.Semaphore(5)
+        self.full=threading.Semaphore(8)
+        
+
 
     def startSimulation(self):
         # Create Machine and Printer threads 创建机器和打印机线程
@@ -89,6 +96,7 @@ class Assignment1:
                 self.machineSleep()
                 # Machine wakes up and sends a print request
                 # Write code here
+                self.printRequest(self.machineID)
 
         def machineSleep(self):
             sleepSeconds = random.randint(1, self.outer.MAX_MACHINE_SLEEP)
