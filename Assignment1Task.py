@@ -74,6 +74,11 @@ class Assignment1:
                 self.printerSleep()
                 # Grab the request at the head of the queue and print it
                 # Write code here
+                #--task2--#
+                self.outer.full.acquire()
+                with self.outer.queue_lock:
+                    self.printDox(self.printerID)
+                self.outer.empty.release()
 
         def printerSleep(self):
             sleepSeconds = random.randint(1, self.outer.MAX_PRINTER_SLEEP)
