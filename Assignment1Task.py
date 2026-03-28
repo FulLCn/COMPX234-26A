@@ -23,8 +23,8 @@ class Assignment1:
         # 互斥锁：保证队列同一时间只能被一个线程操作
         self.queue_lock = threading.Lock()
         self.empty=threading.Semaphore(5)
-        self.full=threading.Semaphore(8)
-        
+        self.full=threading.Semaphore(0)
+
 
 
     def startSimulation(self):
