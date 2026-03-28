@@ -39,7 +39,7 @@ class Assignment1:
         for t in self.pThreads:
             t.start()
 
-        # Let the simulation run for some time
+        # Let the simulation run for some time #等待线程结束
         time.sleep(self.SIMULATION_TIME)
 
         # Finish simulation
