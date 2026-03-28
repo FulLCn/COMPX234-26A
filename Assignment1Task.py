@@ -7,9 +7,9 @@ from printList import printList
 
 class Assignment1:
     # Simulation Initialisation parameters
-    NUM_MACHINES = 50        # Number of machines that issue print requests
-    NUM_PRINTERS = 5         # Number of printers in the system
-    SIMULATION_TIME = 30     # Total simulation time in seconds
+    NUM_MACHINES = 50        # Number of machines that issue print requests 申请打印的数量
+    NUM_PRINTERS = 5         # Number of printers in the system 打印机数量
+    SIMULATION_TIME = 30     # Total simulation time in seconds 模拟总时长
     MAX_PRINTER_SLEEP = 3    # Maximum sleep time for printers
     MAX_MACHINE_SLEEP = 5    # Maximum sleep time for machines
 
