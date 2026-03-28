@@ -22,6 +22,7 @@ class Assignment1:
         #--task2--#
         # 互斥锁：保证队列同一时间只能被一个线程操作
         self.queue_lock = threading.Lock()
+        #信号量：empty空位，full待打印项目
         self.empty=threading.Semaphore(5)
         self.full=threading.Semaphore(0)
 
