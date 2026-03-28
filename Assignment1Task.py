@@ -13,17 +13,19 @@ class Assignment1:
     MAX_PRINTER_SLEEP = 3    # Maximum sleep time for printers 打印机休眠最大时长
     MAX_MACHINE_SLEEP = 5    # Maximum sleep time for machines 机器最大休眠时间
 
-    # Initialise simulation variables
+    # Initialise simulation variables 初始化
     def __init__(self):
         self.sim_active = True
-        self.print_list = printList()  # Create an empty list of print requests
-        self.mThreads = []             # list for machine threads
-        self.pThreads = []             # list for printer threads
+        self.print_list = printList()  # Create an empty list of print requests 创建打印列表
+        self.mThreads = []             # list for machine threads 机器线程列表
+        self.pThreads = []             # list for printer threads 打印机线程列表
 
     def startSimulation(self):
-        # Create Machine and Printer threads
+        # Create Machine and Printer threads 创建机器和打印机线程
         # Write code here
-            
+        for i in range(self.NUM_MACHINES):
+            t=self.machineThread(i,self)
+            self.pThreads.append(t)
         # Start all the threads
         # Write code here
 
