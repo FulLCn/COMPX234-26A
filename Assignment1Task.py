@@ -10,8 +10,8 @@ class Assignment1:
     NUM_MACHINES = 50        # Number of machines that issue print requests 申请打印的数量
     NUM_PRINTERS = 5         # Number of printers in the system 打印机数量
     SIMULATION_TIME = 30     # Total simulation time in seconds 模拟总时长
-    MAX_PRINTER_SLEEP = 3    # Maximum sleep time for printers
-    MAX_MACHINE_SLEEP = 5    # Maximum sleep time for machines
+    MAX_PRINTER_SLEEP = 3    # Maximum sleep time for printers 打印机休眠最大时长
+    MAX_MACHINE_SLEEP = 5    # Maximum sleep time for machines 机器最大休眠时间
 
     # Initialise simulation variables
     def __init__(self):
